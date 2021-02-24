@@ -11,7 +11,7 @@ module.exports = {
   ],
   deploy: {
     production: {
-      key: 'C:/Users/test/ec2keypair.pem',
+      key: '~/ec2keypair.pem',
       user: 'ec2-user',
       host: 'ec2-18-134-249-95.eu-west-2.compute.amazonaws.com',
       ref: 'origin/master',
