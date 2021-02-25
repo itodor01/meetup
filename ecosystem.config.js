@@ -12,14 +12,14 @@ module.exports = {
   deploy: {
     production: {
       key: '~/ec2keypair.pem',
-      user: 'ec2-user',
-      host: 'ec2-18-134-249-95.eu-west-2.compute.amazonaws.com',
+      user: 'ubuntu',
+      host: 'ec2-18-134-180-58.eu-west-2.compute.amazonaws.com',
       ref: 'origin/master',
       repo: 'https://github.com/itodor01/meetup',
 
       // eslint-disable-next-line max-len
       // Make sure this directory exists on your server or change this entry to match your directory structure
-      path: '/home/ec2-user/deploy',
+      path: '/home/ubuntu/deploy',
 
       'post-deploy': 'cp ../.env ./ && npm install && pm2 startOrRestart ecosystem.config.js --env production',
     },
