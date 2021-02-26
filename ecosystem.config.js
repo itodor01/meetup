@@ -12,7 +12,7 @@ module.exports = {
   deploy: {
     production: {
       key: '~/ec2keypair.pem',
-      user: 'ubuntu',
+      user: 'root',
       host: 'team-wallacespace.co.uk',
       ref: 'origin/master',
       repo: 'https://github.com/itodor01/meetup.git',
