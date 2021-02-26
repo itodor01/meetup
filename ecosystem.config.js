@@ -12,11 +12,11 @@ module.exports = {
   deploy: {
     production: {
       key: '~/ec2keypair.pem',
-      user: 'ubuntu',
+      user: 'root',
       host: 'team-wallacespace.co.uk',
       ref: 'origin/master',
       repo: 'https://github.com/itodor01/meetup.git',
-      path: '/var/www/html',
+      path: '/var/www/deploy',
       'post-deploy': 'cp ../.env ./ && npm install && pm2 startOrRestart ecosystem.config.js --env production',
     },
   },
