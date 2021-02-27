@@ -41,8 +41,7 @@ UserSchema.pre('save', async function preSave(next) {
   const user = this;
   if (!user.isModified('password')) return next();
   try {
-    const hash = await bcrypt.hash(user.password, SALT_ROUNDS);
-    user.password = hash;
+    user.password = await bcrypt.hash(user.password, SALT_ROUNDS);
     return next();
   } catch (err) {
     return next(err);
