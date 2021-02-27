@@ -51,7 +51,7 @@ if (cluster.isMaster) {
     cluster.fork();
   }
   cluster.on('exit', (worker) => {
-    log.fatal(`worker ${worker.process.pid} just died`);
+    log.fatal(`Worker ${worker.process.pid} just died`);
     cluster.fork();
   });
 } else {

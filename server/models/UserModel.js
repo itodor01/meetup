@@ -16,10 +16,11 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    lowercase: true,
     index: { unique: true },
     validate: {
       validator: emailValidator.validate,
-      message: props => `${props.value} is not a valid email address`,
+      message: props => `${props.value} is not a valid email address!`,
     },
   },
   password: {
@@ -32,11 +33,8 @@ const UserSchema = mongoose.Schema({
   avatar: {
     type: String,
   },
-}, {
-  timestamps: true,
-});
+}, { timestamps: true });
 
-// Pre save hook, this will run on every save to the document
 UserSchema.pre('save', async function preSave(next) {
   const user = this;
   if (!user.isModified('password')) return next();

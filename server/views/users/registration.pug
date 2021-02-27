@@ -11,7 +11,7 @@ block content
         else
           .panel.panel-default
             .panel-body
-              form(method="POST", action="/users/registration" enctype="multipart/form-data")
+              form(method="POST", action="/users/registration", enctype="multipart/form-data")
                 .form-group
                   label(for='inputName') Name
                   input#inputName.form-control(type='text', name='username', aria-describedby='nameHelp', placeholder='Enter your name', required, minlength=3)
@@ -35,4 +35,3 @@ block content
       if artwork
         aside.col-sm-4
           include ../includes/artwork
-
