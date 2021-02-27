@@ -8,7 +8,7 @@ const fsunlink = util.promisify(fs.unlink);
 
 class AvatarService {
   constructor(directory) {
-    this.directory = directory;
+    this.directocy = directory;
   }
 
   async store(buffer) {
@@ -39,7 +39,7 @@ class AvatarService {
   }
 
   filepath(filename) {
-    return path.resolve(`${this.directory}/${filename}`);
+    return path.resolve(`${this.directocy}/${filename}`);
   }
 }
 
