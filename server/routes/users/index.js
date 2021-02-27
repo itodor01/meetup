@@ -1,6 +1,6 @@
 const express = require('express');
 const passport = require('passport');
-const apicache = require('apicache');
+
 const UserModel = require('../../models/UserModel');
 const middlewares = require('../middlewares');
 
@@ -61,7 +61,7 @@ module.exports = (params) => {
     return res.sendFile(avatars.filepath(req.params.filename));
   });
 
-  router.get('/avatartn/:filename', apicache.middleware('1 minute'), async (req, res) => {
+  router.get('/avatartn/:filename', async (req, res) => {
     res.type('png');
     const tn = await avatars.thumbnail(req.params.filename);
     return res.end(tn, 'binary');
