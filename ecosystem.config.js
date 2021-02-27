@@ -11,7 +11,6 @@ module.exports = {
   ],
   deploy: {
     production: {
-      key: '~/ec2keypair.pem',
       user: 'ubuntu',
       host: 'team-wallacespace.co.uk',
       ref: 'origin/master',
