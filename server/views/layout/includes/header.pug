@@ -34,16 +34,16 @@ header
               if user
                 if(user.avatar)
                   img.img-responsive.usertn(src=`/users/avatartn/${user.avatar}`)
-                else 
+                else
                   | #{user.username}
                   span.caret
                     span
               else
-                | Account  
+                | Account
                 span.caret
                   span
             ul.dropdown-menu
-              if (!user)  
+              if (!user)
                 li
                   a(href=`/users/registration`) Register
                 li
@@ -52,4 +52,4 @@ header
                 li
                   a(href=`/users/account`) My Account
                 li
-                  a(href=`/users/logout`) Logout                       
+                  a(href=`/users/logout`) Logout
